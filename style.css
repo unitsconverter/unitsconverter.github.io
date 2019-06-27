@@ -1,4 +1,4 @@
-#panel::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
     height: 2px;
 }
@@ -51,7 +51,8 @@
     overflow-y: scroll;
 }
 
-.unit-button {
+.button {
     width: 80%;
     text-transform: capitalize;
 }
+
