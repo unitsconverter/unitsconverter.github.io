@@ -1,58 +1,23 @@
-::-webkit-scrollbar {
-    width: 10px;
-    height: 2px;
+:root {
+    --color-primary: #1a9f60;
+    --color-lightGrey: #d2d6dd;
+    --color-grey: #7e818b;
+    --color-darkGrey: #3f4144;
+    --color-error: #d43939;
+    --color-success: #28bd14;
+    --grid-maxWidth: 70%;
+    --grid-gutter: 2rem;
+    --font-size: 1.6rem;
+    --font-family: "Arial", sans-serif;
 }
 
-::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #e1e1e1;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: #000000;
-}
-
-::-webkit-scrollbar-track {
-    background: #666666;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-}
-
-::-webkit-scrollbar-track:hover {
-    background: #666666;
-}
-
-::-webkit-scrollbar-track:active {
-    background: #333333;
-}
-
-::-webkit-scrollbar-corner {
-    background: transparent;
-}
-
-#panel {
-    height: 90%;
-    max-height: 90%;
-}
-
-#units-types-container {
-    height: 100%;
-    max-height: 90%;
-    overflow-y: scroll;
-}
-
-.button {
-    width: 80%;
+.src-unit-label-unit,
+.dst-unit-label-unit {
     text-transform: capitalize;
 }
 
+.button {
+    text-transform: capitalize;
+    font: 1.5em sans-serif;
+    margin: 0.1em;
+}
