@@ -3,61 +3,69 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row" id="top-bar">
-            <div class="col is-text-center">
-                <h3 id="action">I want to convert
-                    <span id="unit-type-label" class="text-primary"></span>
-                    <div class="src-unit-label">
-                        <span>from </span>
-                        <span class="src-unit-label-unit text-primary"></span>
-                    </div>
-                    <div class="dst-unit-label">
-                        <span>to </span>
-                        <span class="dst-unit-label-unit text-primary"></span>
-                    </div>
-                </h3>
-            </div>
-        </div>
-        <div class="row card" id="unit-type-selector">
-        </div>
-        <div class="row card" id="src-unit-selector">
-            <div class="col-12">
-                <h4>From</h4>
-            </div>
-        </div>
-        <div class="row card" id="dst-unit-selector">
-            <div class="col-12">
-                <h4>To</h4>
-            </div>
-        </div>
-        <div class="row card is-center" id="inputs">
-            <div class="col-2">
-                <span class="src-unit-label-unit text-primary"></span>
-                <input type="text" id="src-value">
-            </div>
-            <div class="col-2">
-                <span class="dst-unit-label-unit text-primary"></span>
-                <input type="text" id="dst-value" readonly>
-            </div>
-        </div>
-        <div class="row card is-center">
-            <div class="col-2">
-                <a class="button">Try Other</a>
-            </div>
-        </div>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:700" rel="stylesheet">
+
+    <div class="converter-wrapper">
+        <h1>ENGINEERING <br>UNIT CONVERTER</h1>
+
+        <form name="property_form">
+            <span>
+                <select class="select-property" name="the_menu" size=1
+                    onChange="UpdateUnitMenu(this, document.form_A.unit_menu); UpdateUnitMenu(this, document.form_B.unit_menu)">
+                </select>
+            </span>
+        </form>
+
+        <div class="converter-side-a">
+            <form name="form_A" onSubmit="return false">
+                <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0"
+                    onKeyUp="CalculateUnit(document.form_A, document.form_B)">
+                <span>
+                    <select name="unit_menu" onChange="CalculateUnit(document.form_B, document.form_A)">
+                    </select>
+                </span>
+            </form>
+        </div> <!-- /converter-side-a -->
+
+        <div class="converter-equals">
+            <p>=</p>
+        </div> <!-- /converter-side-a -->
+
+        <div class="converter-side-b">
+            <form name="form_B" onSubmit="return false">
+                <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0"
+                    onkeyup="CalculateUnit(document.form_B, document.form_A)">
+                <span>
+                    <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_B)">
+                    </select>
+                </span>
+            </form>
+        </div> <!-- /converter-side-b -->
+    </div><!-- /converter-wrapper -->
+    <div class="footer">
+        <a href="https://codepen.io/jacobbanner/pen/oxeoqp">From https://codepen.io/jacobbanner/pen/oxeoqp</a>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
-    </script>
-    <script src="quantities.js"></script>
     <script src="ui.js"></script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115774942-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115774942-1');
+    </script>
 
 </body>
 
